@@ -70,12 +70,12 @@ fun convertToSTable(sourceText: String, sList: MutableList<MutableList<Int>>): S
 
 
 fun function(ep: List<Int>, s0: MutableList<MutableList<Int>>, s1: MutableList<MutableList<Int>>, key: String, message: String): String {
-    val messageLeft = message.substring(0, message.length / 2)
-    val messageRight = message.substring(message.length / 2, message.length)
+    val messageLeft = message.substring(0, 4)
+    val messageRight = message.substring(4, message.length)
     val convertToEP = convertTo(messageRight, ep)
     val firstXor = xor(convertToEP, key)
-    val sTableLeft = convertToSTable(firstXor.substring(0, firstXor.length / 2), s0)
-    val sTableRight = convertToSTable(firstXor.substring(firstXor.length / 2, firstXor.length), s1)
+    val sTableLeft = convertToSTable(firstXor.substring(0, 4), s0)
+    val sTableRight = convertToSTable(firstXor.substring(4, firstXor.length), s1)
     val convertToP4 = convertTo(sTableLeft + sTableRight, pFour)
 
     return xor(messageLeft, convertToP4) + messageRight
