@@ -65,6 +65,7 @@ fun convertToSTable(sourceText: String, sList: MutableList<MutableList<Int>>): S
 
     if (result == "1") result = "0$result"
     else if (result == "0") result = "0$result"
+    
     return result
 }
 
