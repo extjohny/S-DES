@@ -1,1 +1,1 @@
-*# S-DES Encryption & Decryption
+# S-DES Encryption & Decryption
